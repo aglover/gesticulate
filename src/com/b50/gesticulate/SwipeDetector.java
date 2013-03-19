@@ -2,6 +2,14 @@ package com.b50.gesticulate;
 
 import android.view.MotionEvent;
 
+/***
+ * Copyright (c) 2011 Andrew Glover
+ * http://thediscoblog.com
+ * https://twitter.com/aglover
+ *
+ * See Git repo for documentation, tests, and MIT license description.
+ * https://github.com/aglover/gesticulate
+ */
 public class SwipeDetector {
 
     private int swipe_distance;
