@@ -20,8 +20,8 @@ public class SwipeDetectorTest {
         eventOne.setY(400);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setY(200);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isUpSwipe(eventOne, eventTwo, 300f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 300, 300);
+        boolean value = detector.isUpSwipe();
         assertTrue("isUpSwipe was not true?", value);
     }
 
@@ -31,8 +31,8 @@ public class SwipeDetectorTest {
         eventOne.setY(400);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setY(200);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isUpSwipe(eventOne, eventTwo, 100f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 100, 100);
+        boolean value = detector.isUpSwipe();
         assertFalse("isUpSwipe was true?", value);
     }
 
@@ -42,8 +42,8 @@ public class SwipeDetectorTest {
         eventOne.setY(300);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setY(200);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isUpSwipe(eventOne, eventTwo, 300f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 300, 300);
+        boolean value = detector.isUpSwipe();
         assertFalse("isUpSwipe was true?", value);
     }
 
@@ -53,8 +53,8 @@ public class SwipeDetectorTest {
         eventOne.setY(200);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setY(400);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isDownSwipe(eventOne, eventTwo, 300f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 300, 300);
+        boolean value = detector.isDownSwipe();
         assertTrue("isDownSwipe was not true?", value);
     }
 
@@ -64,8 +64,8 @@ public class SwipeDetectorTest {
         eventOne.setY(200);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setY(400);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isDownSwipe(eventOne, eventTwo, 100f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 100, 100);
+        boolean value = detector.isDownSwipe();
         assertFalse("isUpSwipe was true?", value);
     }
 
@@ -75,8 +75,8 @@ public class SwipeDetectorTest {
         eventOne.setY(200);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setY(300);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isDownSwipe(eventOne, eventTwo, 300f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 300, 300);
+        boolean value = detector.isDownSwipe();
         assertFalse("isDownSwipe was true?", value);
     }
 
@@ -86,8 +86,8 @@ public class SwipeDetectorTest {
         eventOne.setX(400);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setX(200);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isLeftSwipe(eventOne, eventTwo, 300f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 300, 300);;
+        boolean value = detector.isLeftSwipe();
         assertTrue("isLeftSwipe was not true?", value);
     }
 
@@ -97,8 +97,8 @@ public class SwipeDetectorTest {
         eventOne.setX(400);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setX(200);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isLeftSwipe(eventOne, eventTwo, 100f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 100, 100);
+        boolean value = detector.isLeftSwipe();
         assertFalse("isLeftSwipe was true?", value);
     }
 
@@ -108,8 +108,8 @@ public class SwipeDetectorTest {
         eventOne.setY(400);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setY(300);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isLeftSwipe(eventOne, eventTwo, 300f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 300, 300);
+        boolean value = detector.isLeftSwipe();
         assertFalse("isLeftSwipe was true?", value);
     }
 
@@ -119,8 +119,8 @@ public class SwipeDetectorTest {
         eventOne.setX(200);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setX(400);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isRightSwipe(eventOne, eventTwo, 300f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 300, 300);
+        boolean value = detector.isRightSwipe();
         assertTrue("isRightSwipe was not true?", value);
     }
 
@@ -130,8 +130,8 @@ public class SwipeDetectorTest {
         eventOne.setX(200);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setX(400);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isRightSwipe(eventOne, eventTwo, 100f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 100, 100);
+        boolean value = detector.isRightSwipe();
         assertFalse("isRightSwipe was true?", value);
     }
 
@@ -141,8 +141,8 @@ public class SwipeDetectorTest {
         eventOne.setY(200);
         MotionEvent eventTwo = new MotionEvent();
         eventTwo.setY(300);
-        SwipeDetector detector = new SwipeDetector();
-        boolean value = detector.isRightSwipe(eventOne, eventTwo, 300f);
+        SwipeDetector detector = new SwipeDetector(eventOne, eventTwo, 300, 300);
+        boolean value = detector.isRightSwipe();
         assertFalse("isRightSwipe was true?", value);
     }
 }
