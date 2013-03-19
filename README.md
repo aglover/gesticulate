@@ -1,6 +1,10 @@
 # Gesticulate - Android swipe detection made simple
 
-This is a simple utility that makes it easy to detect if a user is swiping a finger across a devices screen (i.e. a fling!). 
+This is a simple utility that makes it easy to detect if a user is swiping a finger across a device's screen (i.e. a fling!). You can detect
+up, down, left, and right movements. Furthermore, you can set a distance threshold and a threshold velocity. There are reasonable default
+values for both thresholds as well.
+
+
 
 ## Installation
 
@@ -16,7 +20,7 @@ Include the class file in your Android project, or better yet, clone the reposit
 
 The MIT License
 
-Copyright (c) 2011 Andrew Glover
+Copyright (c) 2013 Andrew Glover
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
