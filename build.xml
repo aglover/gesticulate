@@ -1,0 +1,78 @@
+<project name="gesticulate" basedir="." default="test">
+
+    <property name="version" value="0.1"/>
+    <property name="lib.dir" value="lib"/>
+    <property name="build.dir" value="target"/>
+    <property name="build.test.dir" value="${build.dir}/test"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="stub.dir" value="${build.dir}/ext-classes"/>
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile" depends="compile.sub"
+            description="compiles source code and puts classes in target/ directory">
+        <mkdir dir="${classes.dir}"/>
+        <javac includeantruntime="false" srcdir="src" destdir="${classes.dir}" classpathref="classpath">
+            <classpath>
+                <path refid="classpath"/>
+                <pathelement path="${stub.dir}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="compile.sub">
+        <mkdir dir="${stub.dir}"/>
+        <javac includeantruntime="false" srcdir="stub" destdir="${stub.dir}" classpathref="classpath"/>
+    </target>
+
+    <target name="jar" depends="test" description="creates jar file for distribution">
+        <jar destfile="${build.dir}/${ant.project.name}-${version}.jar" basedir="${classes.dir}">
+        </jar>
+        <delete dir="${classes.dir}"/>
+    </target>
+
+    <target name="compile-tests" depends="compile">
+        <mkdir dir="${build.dir}/test-classes"/>
+        <javac srcdir="test/" destdir="${build.dir}/test-classes" includeAntRuntime="false" source="1.5" debug="true">
+            <classpath>
+                <path refid="classpath"/>
+                <pathelement path="${classes.dir}"/>
+                <pathelement path="${stub.dir}"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="test" depends="compile-tests">
+        <junit fork="true" forkmode="once" haltonfailure="false" haltonerror="false" failureproperty="tests.failures"
+               errorproperty="tests.errors" includeantruntime="true" showoutput="true" printsummary="true">
+            <classpath>
+                <path refid="classpath"/>
+                <pathelement path="${classes.dir}"/>
+                <pathelement path="${stub.dir}"/>
+                <pathelement path="${build.dir}/test-classes"/>
+            </classpath>
+            <formatter type="xml"/>
+            <batchtest fork="yes"
+                       todir="./${build.dir}/">
+                <fileset dir="test/">
+                    <include name="**/*Test.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+        <mkdir dir="./${build.dir}/reports"/>
+        <junitreport todir="./${build.dir}/reports">
+            <fileset dir="./${build.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="./${build.dir}/reports/html"/>
+        </junitreport>
+        <fail if="tests.failures" message="There were JUnit failures -- see the reports in ./${build.dir}/reports"/>
+    </target>
+
+</project>
