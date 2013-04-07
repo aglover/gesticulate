@@ -35,6 +35,43 @@ The following methods are available to you:
 * `isLeftSwipe`
 * `isRightSwipe`
 
+That's it. Simple, easy, and quite useful.
+
+## Putting it all together
+
+To do something meaningful with a swipe, you have to first _detect_ it; and to detect it, you'll need to attach a few listeners. For example, if you want to listen and handle swipes in a `View` you can do something like this:
+
+	GestureDetector gestureDetector new GestureDetector(new SimpleOnGestureListener() {
+		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+			try {
+				final SwipeDetector detector = new SwipeDetector(e1, e2, velocityX, velocityY);
+				if (detector.isDownSwipe()) {
+					finish();
+				} else {
+					return false;
+				}
+			} catch (Exception e) {}
+			return false;
+		}
+	});
+
+Now that you've got a `GestureDetector` instance, you can attach it to a `View` like so:
+
+	final View view = findViewById(R.id.widget33);
+
+	view.setOnClickListener(new OnClickListener() {
+		public void onClick(View arg0) {
+		}
+	});
+
+	view.setOnTouchListener(new View.OnTouchListener() {
+		public boolean onTouch(View v, MotionEvent event) {
+			return gestureDetector.onTouchEvent(event);
+		}
+	});
+
+Note, you'll need to provide a do-nothing `OnClickListener` to make things work, however, the real meat is in the `OnTouchListener` that ultimately makes use of the `SwipeDetector` inside the `GestureDetector`.
+
 ### Further details
 
 You can alter the details of how _fast_ a swipe occurs as well as the _length_ of the swipe. Simply provide these values as the last two parameters to a `SwipeDetector` instantiation. 
