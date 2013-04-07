@@ -71,10 +71,6 @@ Now that you've got a `GestureDetector` instance, you can attach it to a `View` 
 
 Note, you'll need to provide a do-nothing `OnClickListener` to make things work, however, the real meat is in the `OnTouchListener` that ultimately makes use of the `SwipeDetector` inside the `GestureDetector`.
 
-## Who's using it?
-
-Gesticulate is used by [Savvy Words](https://play.google.com/store/apps/details?id=com.b50.savvywords), which you can find in [Google Play](https://play.google.com/store/apps/details?id=com.b50.savvywords) and [Amazon's Appstore for Android](http://www.amazon.com/Beacon50-Savvy-Words/dp/B00C535D20/ref=sr_1_1?s=mobile-apps&ie=UTF8&qid=1365339189&sr=1-1). The Savvy Words Android app uses swipes to advance through word flash cards. It's free so download it and see Gesticulate in action (and enhance your vocabulary)!
-
 ### Further details
 
 You can alter the details of how _fast_ a swipe occurs as well as the _length_ of the swipe. Simply provide these values as the last two parameters to a `SwipeDetector` instantiation. 
@@ -90,6 +86,10 @@ You can alter the details of how _fast_ a swipe occurs as well as the _length_ o
 ## Installation
 
 Clone the repo, change directories into the project's root and type `ant`. That'll build a .jar file you can include in your Android `libs` directory. 
+
+## Who's using it?
+
+Gesticulate is used by [Savvy Words](https://play.google.com/store/apps/details?id=com.b50.savvywords), which you can find in [Google Play](https://play.google.com/store/apps/details?id=com.b50.savvywords) and [Amazon's Appstore for Android](http://www.amazon.com/Beacon50-Savvy-Words/dp/B00C535D20/ref=sr_1_1?s=mobile-apps&ie=UTF8&qid=1365339189&sr=1-1). The Savvy Words Android app uses swipes to advance through word flash cards. It's free so download it and see Gesticulate in action (and enhance your vocabulary)!
 
 ## Helpful resources
 
