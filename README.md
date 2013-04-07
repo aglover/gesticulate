@@ -10,23 +10,22 @@ Gesticulate handles swipe calculations for you but you still need to implement a
 
 For example, if you want to handle a swipe down to quit an activity, you can provide a `GestureDetector` like so:
 
-`
-new GestureDetector(new SimpleOnGestureListener() {
-  public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-    try {
-      final SwipeDetector detector = new SwipeDetector(e1, e2, velocityX, velocityY);
-	    if (detector.isDownSwipe()) {
-		  finish();
-		} else {
-		  return false;
+	new GestureDetector(new SimpleOnGestureListener() {
+	  public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+	    try {
+	      final SwipeDetector detector = new SwipeDetector(e1, e2, velocityX, velocityY);
+		    if (detector.isDownSwipe()) {
+			  finish();
+			} else {
+			  return false;
+			}
+		} catch (Exception e) {
+			// nothing
 		}
-	} catch (Exception e) {
-		// nothing
-	}
-	return false;
-  }
-});
-`		
+		return false;
+	  }
+	});
+	
 
 ## Installation
 
