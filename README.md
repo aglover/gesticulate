@@ -26,6 +26,19 @@ For example, if you want to handle a swipe down to quit an activity, you can pro
 	  }
 	});
 	
+As you can see in the code above, a `SwipeDetector` instance is created with `onFling`'s parameters; once that's done, you can easily detect up, down, left, and right swipes. 
+
+### Further details
+
+You can alter the details of how _fast_ a swipe occurs as well as the _length_ of the swipe. Simply provide these values as the last two parameters to a `SwipeDetector` instantiation. 
+
+	public SwipeDetector(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY, int minDistance, int minVelocity) {
+	    //....
+	}
+
+### Even further details
+
+`SwipeDetector` is simple. If you want more details on its usage, then see the `test` directory. You can run the tests via `ant test` or you might have already noticed them run when you jar'ed it!
 
 ## Installation
 
