@@ -6,7 +6,7 @@ values for both thresholds as well.
 
 ## Details
 
-Gesticulate handles swipe calculations for you but you still need to implement a listener to behave in a meaningful way. For example, you can use Android's `GestureDetector` type and provide it an implementation of `SimpleOnGestureListener` (which is also an Android class and it provides an `onFling` method to implement) that makes use of Gesticulate. 
+Gesticulate handles swipe calculations for you, but you still need to implement a listener to behave in a meaningful way. For example, you can use Android's `GestureDetector` type and provide it an implementation of `SimpleOnGestureListener` (which is also an Android class and it provides an `onFling` method to implement) that makes use of Gesticulate. 
 
 For example, if you want to handle a swipe down to quit an activity, you can provide a `GestureDetector` like so:
 
@@ -28,11 +28,18 @@ For example, if you want to handle a swipe down to quit an activity, you can pro
 	
 As you can see in the code above, a `SwipeDetector` instance is created with `onFling`'s parameters; once that's done, you can easily detect up, down, left, and right swipes. 
 
+The following methods are available to you:
+
+* `isDownSwipe`
+* `isUpSwipe`
+* `isLeftSwipe`
+* `isRightSwipe`
+
 ### Further details
 
 You can alter the details of how _fast_ a swipe occurs as well as the _length_ of the swipe. Simply provide these values as the last two parameters to a `SwipeDetector` instantiation. 
 
-	public SwipeDetector(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY, int minDistance, int minVelocity) {
+	public SwipeDetector(MotionEvent e1, MotionEvent e2, float velX, float velY, int minDistance, int minVelocity) {
 	    //....
 	}
 
