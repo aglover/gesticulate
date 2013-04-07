@@ -1,4 +1,4 @@
-<project name="gesticulate" basedir="." default="test">
+<project name="gesticulate" basedir="." default="jar">
 
     <property name="version" value="0.1"/>
     <property name="lib.dir" value="lib"/>

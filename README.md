@@ -5,10 +5,13 @@ up, down, left, and right movements. Furthermore, you can set a distance thresho
 values for both thresholds as well.
 
 
-
 ## Installation
 
-Include the class file in your Android project, or better yet, clone the repository, build the dang thing and include the jar file. 
+Clone the repo and run
+
+`ant` 
+
+and that'll build a .jar file you can include in your Android `libs` directory. 
 
 
 ## Helpful resources
