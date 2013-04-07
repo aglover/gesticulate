@@ -60,8 +60,7 @@ Now that you've got a `GestureDetector` instance, you can attach it to a `View` 
 	final View view = findViewById(R.id.widget33);
 
 	view.setOnClickListener(new OnClickListener() {
-		public void onClick(View arg0) {
-		}
+		public void onClick(View arg0) {}
 	});
 
 	view.setOnTouchListener(new View.OnTouchListener() {
@@ -71,6 +70,10 @@ Now that you've got a `GestureDetector` instance, you can attach it to a `View` 
 	});
 
 Note, you'll need to provide a do-nothing `OnClickListener` to make things work, however, the real meat is in the `OnTouchListener` that ultimately makes use of the `SwipeDetector` inside the `GestureDetector`.
+
+## Who's using it?
+
+Gesticulate is used by [Savvy Words](https://play.google.com/store/apps/details?id=com.b50.savvywords), which you can find in [Google Play](https://play.google.com/store/apps/details?id=com.b50.savvywords) and [Amazon's Appstore for Android](http://www.amazon.com/Beacon50-Savvy-Words/dp/B00C535D20/ref=sr_1_1?s=mobile-apps&ie=UTF8&qid=1365339189&sr=1-1). Savvy Word's uses swipes to advance through word flash cards. It's free so download it and see Gesticulate in action!
 
 ### Further details
 
