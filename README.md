@@ -4,15 +4,33 @@ This is a simple utility that makes it easy to detect if a user is swiping a fin
 up, down, left, and right movements. Furthermore, you can set a distance threshold and a threshold velocity. There are reasonable default
 values for both thresholds as well.
 
+## Details
+
+Gesticulate handles swipe calculations for you but you still need to implement a listener to behave in a meaningful way. For example, you can use Android's `GestureDetector` type and provide it an implementation of `SimpleOnGestureListener` (which is also an Android class and it provides an `onFling` method to implement) that makes use of Gesticulate. 
+
+For example, if you want to handle a swipe down to quit an activity, you can provide a `GestureDetector` like so:
+
+`
+new GestureDetector(new SimpleOnGestureListener() {
+  public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+    try {
+      final SwipeDetector detector = new SwipeDetector(e1, e2, velocityX, velocityY);
+	    if (detector.isDownSwipe()) {
+		  finish();
+		} else {
+		  return false;
+		}
+	} catch (Exception e) {
+		// nothing
+	}
+	return false;
+  }
+});
+`		
 
 ## Installation
 
-Clone the repo and run
-
-`ant` 
-
-and that'll build a .jar file you can include in your Android `libs` directory. 
-
+Clone the repo, change directories into the project's root and type `ant`. That'll build a .jar file you can include in your Android `libs` directory. 
 
 ## Helpful resources
 
