@@ -95,6 +95,10 @@ Clone the repo, change directories into the project's root and type `ant`. That'
 
 * [The Disco Blog](http://thediscoblog.com/)
 * [Mobile for the masses: A gentle introduction to Android](http://www.ibm.com/developerworks/library/j-mobileforthemasses1/)
+* [Savvy Words app in Google Play](https://play.google.com/store/apps/details?id=com.b50.savvywords)
+* [Savvy Words app in Amazon's Appstore for Android](http://www.amazon.com/Beacon50-Savvy-Words/dp/B00C535D20/ref=sr_1_1?s=mobile-apps&ie=UTF8&qid=1365339189&sr=1-1)
+* View the [source](https://github.com/aglover/gesticulate/blob/master/src/com/b50/gesticulate/SwipeDetector.java)
+* View the [tests](https://github.com/aglover/gesticulate/blob/master/test/test/com/b50/gesticulate/SwipeDetectorTest.java)
 
 # License
 
